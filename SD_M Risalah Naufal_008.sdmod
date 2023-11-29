@@ -1,0 +1,211 @@
+set top_net [getTopNet $net]
+set SAVED_WITH_VERSION {2.10.0 made on Mon, 14 Jan 2019 11:20:20 -0400.  VCRevInfo 3154.  Installed on Windows}
+setDefaultCompareMode $net switch_to_question
+set x 849
+set y 9
+set desc {description}
+set name {ALTERNATIVE}
+set color white
+set iconUU {}
+set iconFont "-*-arial-medium-r-normal-*-30-*-*-*-*-*"
+set winFont "-*-arial-medium-r-normal-*-30-*-*-*-*-*"
+set width 41
+set height 191
+set clusterName {ALTERNATIVE}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {HP A}
+set desc {description}
+set x 10
+set y 10
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {HP B}
+set desc {description}
+set x 7
+set y 71
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {HP C}
+set desc {description}
+set x 10
+set y 134
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 367
+set y 9
+set desc {description}
+set name {CRITERIA}
+set color white
+set iconUU {}
+set iconFont "-*-arial-medium-r-normal-*-30-*-*-*-*-*"
+set winFont "-*-arial-medium-r-normal-*-30-*-*-*-*-*"
+set width 358
+set height 195
+set clusterName {CRITERIA}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {HARGA}
+set desc {description}
+set x 10
+set y 10
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {KAPASITAS BATERAI}
+set desc {description}
+set x 10
+set y 147
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {KUALITAS KAMERA}
+set desc {description}
+set x 9
+set y 77
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 14
+set y 61
+set desc {description}
+set name {GOAL}
+set color white
+set iconUU {}
+set iconFont "-*-arial-medium-r-normal-*-30-*-*-*-*-*"
+set winFont "-*-arial-medium-r-normal-*-30-*-*-*-*-*"
+set width 249
+set height 71
+set clusterName {GOAL}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {PEMILIHAN HP}
+set desc {description}
+set x 12
+set y 9
+set color {white}
+set iconUU {}
+set font {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set init {CRITERIA}
+set final {ALTERNATIVE}
+connectClusters $net $init $final
+set init {GOAL}
+set final {CRITERIA}
+connectClusters $net $init $final
+setNodeCompareWord  $net {HARGA} {ALTERNATIVE} {important}
+setNodeCompareWord  $net {KAPASITAS BATERAI} {ALTERNATIVE} {important}
+setNodeCompareWord  $net {KUALITAS KAMERA} {ALTERNATIVE} {important}
+setNodeCompareWord  $net {PEMILIHAN HP} {CRITERIA} {important}
+setNetCompareWord $net {important}
+setNetClusterColor $net {white}
+setNetNodeColor $net {white}
+setNetClusterWinFont $net {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+setNetClusterIconFont $net {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+setNetNodeFont $net {-*-arial-medium-r-normal-*-30-*-*-*-*-*}
+setFormulaType $net 0
+#Working on net 0
+catch {limitPowerOptions $net 2 0}
+c-network readAllCompares -network $net -source {
+3
+GOAL
+1
+PEMILIHAN HP
+CRITERIA
+3
+HARGA
+KUALITAS KAMERA
+KAPASITAS BATERAI
+ALTERNATIVE
+3
+HP A
+HP B
+HP C
+
+3 1,0 0,1 2,2 
+ 0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000 
+0
+1 1,0 
+
+1
+1 2,0 
+
+2
+0 
+
+0,0,1
+3 0,0 1,1 2,2 
+ 5.000000  7.000000 
+ 5.000000 
+
+1,0,2
+3 0,0 1,1 2,2 
+ 3.000000  5.000000 
+ 3.000000 
+
+1,1,2
+3 0,0 1,1 2,2 
+ 0.333333  0.200000 
+ 0.200000 
+
+1,2,2
+3 0,0 1,1 2,2 
+ 0.333333  0.200000 
+ 0.200000 
+
+}
+set FORMAT 1
+recreateNetInsideFrameOnly $net
